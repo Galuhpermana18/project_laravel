@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CheckRole
 {
@@ -18,13 +19,18 @@ class CheckRole
     {
         $roles = array_slice(func_get_args(), 2);
 
-        foreach ($roles as $role) { 
-            $user = \Auth::user()->role;
-            if( $user == $role){
-                return $next($request);
+        // Periksa apakah pengguna sudah terautentikasi
+        if (Auth::check()) {
+            $userRole = Auth::user()->role;
+
+            foreach ($roles as $role) {
+                if ($userRole == $role) {
+                    return $next($request);
+                }
             }
         }
-    
-        return redirect('/');
+
+        // Jika pengguna tidak terautentikasi atau tidak memiliki peran yang sesuai
+        return redirect('/')->with('error', 'Anda tidak memiliki akses untuk halaman ini.');
     }
 }

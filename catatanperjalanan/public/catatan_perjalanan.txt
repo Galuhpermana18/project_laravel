@@ -4,3 +4,7 @@ user_id|tanggal|waktu|lokasi|suhu_tubuh
 3|2022-04-30|19.50 wib|SMK Taruna Bhakti|35 Celcius
 1|2022-04-12|11.30 wib|bandung|36 Celcius
 1|2022-04-12|19.30 wib|Jakarta|38
+6|2023-09-30|19.40 WIB|Medan|10
+10|2024-06-26|19.40 WIB|Medan|10
+13|2025-01-16|19.40 WIB|Bandung|18° Celcius
+15|2025-01-17|19.40 WIB|Bandung|18° Celcius

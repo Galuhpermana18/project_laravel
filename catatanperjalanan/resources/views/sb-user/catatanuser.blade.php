@@ -50,6 +50,8 @@
                         <td>{{$Datauser->lokasi}}</td>
                         <td>{{$Datauser->suhu_tubuh}}</td>
                         <td>
+                            {{-- <a href="{{route('editdata',$Datauser->id)}}" class="btn btn-block btn-primary btn-sm mb-2 mt-2 "><i
+                                                class="fas fa-edit"></i></a> --}}
                             <a href="{{route('detail',$Datauser->id)}}" class="btn btn-block btn-primary btn-sm mb-2 mt-2"><i
                                                 class="fas fa-eye"></i></a>
                         </td>
